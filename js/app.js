@@ -1,7 +1,20 @@
 /*
  * Create a list that holds all of your cards
  */
+let card = document.querySelectorAll('.card');
+let cardArray = Array.prototype.map.call(card, function(element) {
+	return element;
+});
+let cardLength = cardArray.length;
 
+//Add event listener to each card by looping over the cardArray index;
+for (var i=0; i < cardLength; i++) {
+	cardArray[i].addEventListener('click', function() {
+		this.classList.toggle('open');
+		this.classList.toggle('show');
+		this.classList.toggle('disabled');
+	})
+}
 
 /*
  * Display the cards on the page
